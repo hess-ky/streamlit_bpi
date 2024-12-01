@@ -15,20 +15,16 @@ import requests
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import font_manager as fm
+from matplotlib import font_manager as fm, rc
 
 import numpy as np
 import platform
 
 
-# 나눔글꼴 경로 설정
-font_path = os.path.join(os.path.dirname(__file__), "NotoSansKR-Light.ttf")
-
-# 폰트 이름 가져오기
-font_name = fm.FontProperties(fname=font_path).get_name()
-
 # 폰트 설정
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
+font_path = os.path.join(os.path.dirname(__file__), "NotoSansKR-Light.ttf")
+font_name = fm.FontProperties(fname=font_path).get_name()
+rc('font', family=font_name)
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
