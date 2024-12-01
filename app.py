@@ -20,7 +20,7 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-path = "/customFonts/NanumGothic.ttf"
+path = "./customFonts/NanumGothic.ttf"
 font_name= fm.FontProperties(fname=path).get_name()
 
 #font 설정
