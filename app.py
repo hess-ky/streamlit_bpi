@@ -21,7 +21,9 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-
+# 설치된 시스템 폰트 확인
+fonts = [fm.FontProperties(fname=font).get_name() for font in fm.findSystemFonts()]
+st.write("설치된 시스템 폰트:", fonts)
 plt.rcParams['font.family'] = 'NanumSquare'  # 설치된 폰트 이름 사용
 
 
