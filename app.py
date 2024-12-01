@@ -21,7 +21,7 @@ import numpy as np
 import platform
 
 # 프로젝트 내 폰트 파일 경로 설정
-font_path = "./NotoSansKR-Light"
+font_path = "./NotoSansKR-Light.ttf"
 font_prop = fm.FontProperties(fname=font_path)
 
 # matplotlib에 폰트 적용
