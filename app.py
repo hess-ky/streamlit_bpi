@@ -21,6 +21,9 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
+# Streamlit 전체 화면 확장
+st.set_page_config(layout="wide")
+
 for font_path in fm.findSystemFonts():
     font_name = fm.FontProperties(fname=font_path).get_name()
     if "NanumBarunGothic" in font_name:
@@ -29,8 +32,7 @@ for font_path in fm.findSystemFonts():
 plt.rcParams['font.family'] = 'NanumBarunGothic'
 
 
-# Streamlit 전체 화면 확장
-st.set_page_config(layout="wide")
+
 
 # 데이터 설정
 data = pd.DataFrame({
