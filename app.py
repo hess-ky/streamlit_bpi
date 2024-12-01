@@ -20,10 +20,20 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-# 폰트 설정
-font_path = "./NotoSansKR-Regular.ttf"  # 폰트 파일 경로
-font_prop = fm.FontProperties(fname=font_path)
-plt.rc('font', family=font_prop.get_name())
+def fontRegistered():
+    font_dirs = [os.getcwd() + '/customFonts']
+    font_files = fm.findSystemFonts(fontpaths=font_dirs)
+
+    for font_file in font_files:
+        fm.fontManager.addfont(font_file)
+    fm._load_fontmanager(try_read_cache=False)
+    
+ 
+fontRegistered()
+fontNames = [f.name for f in fm.fontManager.ttflist]
+fontname = fontNames[0]
+
+plt.rc('font', family=fontname)
 
 
 # Streamlit 전체 화면 확장
