@@ -20,21 +20,11 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-def fontRegistered():
-    font_dirs = [os.getcwd() + '/customFonts']
-    font_files = fm.findSystemFonts(fontpaths=font_dirs)
+path = "/customFonts/NanumGothic.ttf"
+font_name= fm.FontProperties(fname=path).get_name()
 
-    for font_file in font_files:
-        fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
-    
- 
-fontRegistered()
-fontNames = [f.name for f in fm.fontManager.ttflist]
-fontname = fontNames[0]
-
-plt.rc('font', family=fontname)
-
+#font 설정
+plt.rc('font',family=font_name)
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
