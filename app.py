@@ -22,8 +22,8 @@ import numpy as np
 import platform
 
 
-matplotlib.rcParams['axes.unicode_minus'] = False
-plt.rcParams["font.family"] = 'NanumGothic'
+plt.rcParams['font.family'] = 'Noto Sans CJK'  # 설치된 폰트 이름 사용
+
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
