@@ -20,12 +20,14 @@ from matplotlib import font_manager as fm
 import numpy as np
 import platform
 
-# 현재 디렉토리에 있는 폰트 파일 경로 지정
+
+# 나눔글꼴 경로 설정
 font_path = os.path.join(os.path.dirname(__file__), "NotoSansKR-Light.ttf")
 
-# matplotlib에 폰트 적용
-font_prop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = font_prop.get_name()
+# 폰트 이름 가져오기
+font_name = fm.FontProperties(fname=font_path).get_name()
+
+# 폰트 설정
 plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
 
 # Streamlit 전체 화면 확장
