@@ -20,8 +20,8 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-# 프로젝트 내 폰트 파일 경로 설정
-font_path = "./NotoSansKR-Light.ttf"
+# 동일 경로에 있는 폰트 파일 설정
+font_path = "./NotoSansKR-Regular.ttf"
 font_prop = fm.FontProperties(fname=font_path)
 
 # matplotlib에 폰트 적용
