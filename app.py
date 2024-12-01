@@ -21,8 +21,6 @@ import numpy as np
 import platform
 
 
-st.write([fm.FontProperties(fname=font).get_name() for font in fm.findSystemFonts()])
-
 # 1. 폰트 파일 경로 설정
 font_path = "./NanumGothic.ttf"  # app.py와 동일한 경로에 있는 폰트 파일
 font_prop = fm.FontProperties(fname=font_path)
