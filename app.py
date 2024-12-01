@@ -21,12 +21,14 @@ import numpy as np
 import platform
 
 
-# 폰트 설정
-font_path = os.path.join(os.path.dirname(__file__), "NotoSansKR-Light.ttf")
-print(font_path)
-font_name = fm.FontProperties(fname=font_path).get_name()
-rc('font', family=font_name)
+plt.rcParams['font.family'] = 'Malgun Gothic'
 
+# 프로젝트 내 폰트 파일 경로 설정
+font_path = "./NotoSansKR-Light"
+font_prop = fm.FontProperties(fname=font_path)
+
+# matplotlib에 폰트 적용
+plt.rc('font', family=font_prop.get_name())
 
 
 # Streamlit 전체 화면 확장
