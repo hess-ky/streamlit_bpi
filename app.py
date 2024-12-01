@@ -17,15 +17,24 @@ import matplotlib.pyplot as plt
 import numpy as np
 import platform
 
-# 한글 폰트 설정
-if platform.system() == 'Windows':
-    plt.rcParams['font.family'] = 'Malgun Gothic'  # Windows
-elif platform.system() == 'Darwin':  # MacOS
-    plt.rcParams['font.family'] = 'AppleGothic'
-else:
-    plt.rcParams['font.family'] = 'NanumGothic'  # Linux 환경 (예: Colab)
+# Google Fonts TTF 파일을 다운로드
+def download_google_font(font_url, font_name="google_font.ttf"):
+    if not os.path.exists(font_name):
+        response = requests.get(font_url)
+        with open(font_name, "wb") as f:
+            f.write(response.content)
+    return font_name
 
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
+# Google Fonts URL
+google_font_url = "https://fonts.gstatic.com/s/notosanskr/v26/Pby6FmXiEBPT4ITbgNA5CgmOsn7mw9phzHsB.woff2"
+
+# 다운로드 후 폰트 경로 가져오기
+font_path = download_google_font(google_font_url)
+
+# matplotlib에 폰트 적용
+font_prop = fm.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = font_prop.get_name()
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 깨짐 방지
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
