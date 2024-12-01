@@ -24,7 +24,7 @@ path = "./customFonts/NanumGothic.ttf"
 font_name= fm.FontProperties(fname=path)
 
 #font 설정
-plt.rc('font',family=font_name)
+plt.rc('font',family=font_name.get_name())
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
