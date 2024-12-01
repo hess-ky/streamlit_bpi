@@ -24,14 +24,8 @@ import platform
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
 
-for font_path in fm.findSystemFonts():
-    font_name = fm.FontProperties(fname=font_path).get_name()
-    if "NanumBarunGothic" in font_name:
-        st.write(f"확인된 폰트 이름: {font_name}")
         
 plt.rcParams['font.family'] = 'NanumBarunGothic'
-
-
 
 
 # 데이터 설정
