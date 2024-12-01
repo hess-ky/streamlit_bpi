@@ -21,12 +21,8 @@ import numpy as np
 import platform
 
 
-# 1. 폰트 파일 경로 설정
-font_path = "./NanumGothic.ttf"  # app.py와 동일한 경로에 있는 폰트 파일
-font_prop = fm.FontProperties(fname=font_path)
-
-# 2. matplotlib에 폰트 적용
-plt.rcParams['font.family'] = font_prop.get_name()
+matplotlib.rcParams['axes.unicode_minus'] = False
+plt.rcParams["font.family"] = 'NanumGothic'
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
