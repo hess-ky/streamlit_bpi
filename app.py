@@ -21,7 +21,10 @@ from matplotlib import font_manager as fm, rc
 import numpy as np
 import platform
 
-
+for font_path in fm.findSystemFonts():
+    font_name = fm.FontProperties(fname=font_path).get_name()
+    if "NanumBarunGothic" in font_name:
+        st.write(f"확인된 폰트 이름: {font_name}")
 plt.rcParams['font.family'] = 'NanumBarunGothic'  # 설치된 폰트 이름 사용
 
 
