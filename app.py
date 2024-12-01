@@ -23,8 +23,11 @@ import platform
 
 # 폰트 설정
 font_path = os.path.join(os.path.dirname(__file__), "NotoSansKR-Light.ttf")
+print(font_path)
 font_name = fm.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
+
+
 
 # Streamlit 전체 화면 확장
 st.set_page_config(layout="wide")
