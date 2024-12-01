@@ -21,7 +21,7 @@ import numpy as np
 import platform
 
 path = "./customFonts/NanumGothic.ttf"
-font_name= fm.FontProperties(fname=path).get_name()
+font_name= fm.FontProperties(fname=path)
 
 #font 설정
 plt.rc('font',family=font_name)
